@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { handleTopic } from './handleTopic';
-import { handlePost } from './handlePost';
+import { handleTopic } from '../src/handleTopic';
+import { handlePost } from '../src/handlePost';
 
 export default async (req: VercelRequest, res: VercelResponse) => {
     try {
