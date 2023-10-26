@@ -1,5 +1,5 @@
 import { VercelResponse } from '@vercel/node';
-import { notion, syslog } from '../services';
+import { notion } from '../services';
 import { Ticket, TicketEventName } from './';
 
 export const handleTicketCreated = async (post: Ticket, res: VercelResponse) => {
@@ -17,8 +17,6 @@ export const handleTicketCreated = async (post: Ticket, res: VercelResponse) => 
             event: TicketEventName.ticketCreated
         })
 
-        syslog({ event: "log creation", logRes })
-
         return res.status(200).send({
             discourse_id: post.discourse_id,
             notion_id: ticket.notion_id,
@@ -26,7 +24,6 @@ export const handleTicketCreated = async (post: Ticket, res: VercelResponse) => 
         });
 
     } catch (error) {
-        syslog({ handleTicketCreatedError: error })
         return res.status(500).send({ error: "error creating post" })
     }
 };

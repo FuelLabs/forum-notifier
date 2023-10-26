@@ -17,10 +17,8 @@ export const handleTopic = async (req: VercelRequest, res: VercelResponse) => {
                 return handleTicketReOpen(topic, res)
             }
 
-
         default:
             return res.status(400).send({ error: 'Invalid topic event' });
     }
-
 };
 

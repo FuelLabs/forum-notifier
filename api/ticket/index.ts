@@ -7,4 +7,5 @@ export * from './handleTicketStaffComment'
 export * from './handleTopicEdited'
 
 export * from './Types'
+export * from './discourseTypes'
 export * from './helpers'

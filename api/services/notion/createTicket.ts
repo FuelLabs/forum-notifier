@@ -89,15 +89,14 @@ export const createTicket = async (post: Ticket) => {
                     name: post.status
                 },
             },
-            assignee: {
-                people: [{
-                    id: "",
-                    person: {
-                        email: owner
-                    }
-                }]
-
-            },
+            // assignee: {
+            //     people: [{
+            //         id: "",
+            //         person: {
+            //             email: owner
+            //         }
+            //     }]
+            // },
         },
     } as CreatePageParameters);
 

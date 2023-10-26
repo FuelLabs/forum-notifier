@@ -1,5 +1,5 @@
 import { VercelResponse } from '@vercel/node';
-import { notion, syslog } from '../services';
+import { notion } from '../services';
 import { Ticket, TicketEventName } from './';
 
 export const handleTicketClosed = async (topic: Ticket, res: VercelResponse) => {
@@ -33,7 +33,6 @@ export const handleTicketClosed = async (topic: Ticket, res: VercelResponse) => 
 
     } catch (error) {
         // todo create errors common object
-        syslog({ handleTicketCreatedError: JSON.stringify(error) })
         return res.status(500).send({ error: "error editing topic" })
     }
 

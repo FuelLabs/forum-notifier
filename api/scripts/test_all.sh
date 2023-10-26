@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo -e "_____________________________\n\n"  
 echo -e ">>>     post_created.test\n\n"
 echo -e "_____________________________\n\n"  

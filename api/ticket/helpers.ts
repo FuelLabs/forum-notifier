@@ -1,4 +1,4 @@
-import { notion, syslog } from "../services";
+import { notion } from "../services";
 import { DiscoursePost, DiscourseTopic, TicketStatus, Ticket, TicketEvent, TicketEventName } from "./";
 
 export const parseDiscourseTopicToTicket = (rawTopic: DiscourseTopic): Ticket => (

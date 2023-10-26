@@ -4,7 +4,7 @@
   "description": "Vercel serverless functions to handle Discourse web hooks to create tickets in a Notion database",
   "scripts": {
     "start": "vercel dev",
-    "test": "sh ./api/scripts/test_all.sh"
+    "test": "cd ./api/scripts && bash ./test_all.sh"
   },
   "devDependencies": {
     "@vercel/node": "^2.15.3"
