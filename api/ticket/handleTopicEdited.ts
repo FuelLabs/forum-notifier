@@ -9,8 +9,8 @@ export const handleTopicEdited = async (topic: Ticket, res: VercelResponse) => {
         let ticket = await notion.getTicketByTopic(topic.topic_id)
 
         if (!ticket) {
-            // TODO create err msg const
-            return res.status(400).send({ error: "topic_id not found" });
+            ticket = topic
+            ticket.notion_id = await notion.createTicket(topic)
         }
 
         if (ticket.topic_title !== topic.topic_title) {

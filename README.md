@@ -84,3 +84,6 @@ If you wish to contribute to this project, please first create an issue to discu
 - [ ] Standard http response object
 - [ ] Error codes and msgs constants
 - [ ] Data analytics for TicketEvent logs
+- [ ] Data analytics dashboard
+- [x] Handle comments for old topics
+

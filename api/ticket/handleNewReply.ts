@@ -1,6 +1,6 @@
 import { VercelResponse } from '@vercel/node';
 import { notion } from '../services';
-import { Ticket, TicketEventName, TicketStatus } from './';
+import { Ticket, TicketEventName } from './';
 
 
 export const handleNewReply = async (post: Ticket, res: VercelResponse) => {
@@ -9,7 +9,8 @@ export const handleNewReply = async (post: Ticket, res: VercelResponse) => {
         let ticket = await notion.getTicketByTopic(post.topic_id)
 
         if (!ticket) {
-            return res.status(400).send({ error: "topic_id not found" });
+            ticket = post
+            ticket.notion_id = await notion.createTicket(post)
         }
 
         let last_edited_time = await notion.setTicketAsNewComment(ticket.notion_id)

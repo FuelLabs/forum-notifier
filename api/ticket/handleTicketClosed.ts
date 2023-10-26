@@ -8,7 +8,8 @@ export const handleTicketClosed = async (topic: Ticket, res: VercelResponse) => 
         let ticket = await notion.getTicketByTopic(topic.topic_id)
 
         if (!ticket) {
-            return res.status(400).send({ error: "topic_id not found" });
+            ticket = topic
+            ticket.notion_id = await notion.createTicket(topic)
         }
 
         let last_edited_time = await notion.setTicketAsClosed(ticket.notion_id)
