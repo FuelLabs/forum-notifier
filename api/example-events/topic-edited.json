@@ -1,0 +1,48 @@
+{
+    "topic": {
+        "tags": [],
+        "tags_descriptions": {},
+        "id": 19,
+        "title": "This is a test topic title edited",
+        "fancy_title": "This is a test topic title edited",
+        "posts_count": 1,
+        "created_at": "2023-07-24T19:29:26.717Z",
+        "views": 1,
+        "reply_count": 0,
+        "like_count": 0,
+        "last_posted_at": "2023-07-24T19:29:26.763Z",
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "archetype": "regular",
+        "slug": "this-is-a-test-topic-title-edited",
+        "category_id": 4,
+        "word_count": 7,
+        "deleted_at": null,
+        "user_id": 2,
+        "featured_link": null,
+        "pinned_globally": false,
+        "pinned_at": null,
+        "pinned_until": null,
+        "unpinned": null,
+        "pinned": false,
+        "highest_post_number": 1,
+        "deleted_by": null,
+        "has_deleted": false,
+        "bookmarked": false,
+        "participant_count": 1,
+        "thumbnails": null,
+        "created_by": {
+            "id": 2,
+            "username": "regusr",
+            "name": "regular user name",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/c68b51/{size}.png"
+        },
+        "last_poster": {
+            "id": 2,
+            "username": "regusr",
+            "name": "regular user name",
+            "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/c68b51/{size}.png"
+        }
+    }
+}

@@ -1,11 +1,10 @@
-export * from './handleTicketCreated'
+export * from './handleNewReply'
 export * from './handleTicketBodyEdited'
-export * from './handleTopicEdited'
 export * from './handleTicketClosed'
+export * from './handleTicketCreated'
 export * from './handleTicketReOpen'
 export * from './handleTicketStaffComment'
+export * from './handleTopicEdited'
 
-export * from './discourseTypes'
 export * from './Types'
-
 export * from './helpers'
