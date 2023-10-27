@@ -10,7 +10,6 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
             case 'POST':
                 const eventType = req.headers['x-discourse-event-type'];
-                const event = req.headers['x-discourse-event'];
 
                 switch (eventType) {
                     case 'topic':

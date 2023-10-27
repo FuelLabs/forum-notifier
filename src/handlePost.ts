@@ -5,7 +5,9 @@ import { handleNewReply } from './ticket';
 export const handlePost = (req: VercelRequest, res: VercelResponse) => {
   const post = parseDiscoursePostToTicket(req.body.post)
   const event = req.headers['x-discourse-event'];
-
+  if (post.creator_username === 'system') {
+    return res.status(400).send({ error: 'Reject system messages' });
+  }
   if (event === 'post_created') {
 
     if (post.post_id == 1) {

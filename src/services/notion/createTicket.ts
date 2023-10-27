@@ -1,5 +1,4 @@
-import { CreatePageParameters } from "@notionhq/client/build/src/api-endpoints";
-import { notionClient, databaseId } from "./";
+import { notionClient, databaseId, forumUrl } from "./";
 import { Ticket } from "../../ticket";
 
 export const createTicket = async (post: Ticket) => {
@@ -89,16 +88,19 @@ export const createTicket = async (post: Ticket) => {
                     name: post.status
                 },
             },
-            // assignee: {
-            //     people: [{
-            //         id: "",
-            //         person: {
-            //             email: owner
-            //         }
-            //     }]
-            // },
-        },
-    } as CreatePageParameters);
+            url: {
+                url: `${forumUrl}/t/${post.topic_id}`
+            },
+        }
+        // assignee: {
+        //     people: [{
+        //         id: "",
+        //         person: {
+        //             email: owner
+        //         }
+        //     }]
+        // },
+    });
 
     return response.id
 };
