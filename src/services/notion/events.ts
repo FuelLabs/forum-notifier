@@ -1,7 +1,8 @@
 import { CreatePageParameters } from "@notionhq/client/build/src/api-endpoints";
 import { getAllFromDB, getIsoDate, getCurrentUnixTimestamp } from "./utils";
-import { notionClient, eventsDatabaseId } from "./";
+import { notionClient } from "./";
 import { TicketEvent } from "../../ticket";
+import { eventsDatabaseId } from "../../config";
 
 export const getAllEvents = async () => {
     return await getAllFromDB(eventsDatabaseId)

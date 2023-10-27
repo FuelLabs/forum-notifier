@@ -1,13 +1,18 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import { handleTopic } from '../src/handleTopic';
 import { handlePost } from '../src/handlePost';
+import { forumUrl } from '../src/config';
+import { hasValidSignature } from '../src/helpers';
+
 
 export default async (req: VercelRequest, res: VercelResponse) => {
+    if (!hasValidSignature(req) || req.headers['x-discourse-instance'] !== forumUrl) {
+        console.log('Invalid request');
+        return res.status(401).send({ error: 'Invalid request' });
+    }
+
     try {
         switch (req.method) {
-            case 'GET':
-                return res.status(200).send('get');
-
             case 'POST':
                 const eventType = req.headers['x-discourse-event-type'];
 
@@ -23,10 +28,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
             default:
                 return res.status(405).send({ error: 'Invalid request method' });
         }
-
-
     } catch (error) {
         return res.status(500).send({ error: 'Internal server error' })
-
     }
 }

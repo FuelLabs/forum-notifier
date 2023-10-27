@@ -1,7 +1,8 @@
 import { QueryDatabaseParameters } from "@notionhq/client/build/src/api-endpoints";
 import { TicketStatus, parseNotionToTicket } from "../../ticket";
-import { notionClient, databaseId, NotionTicket } from "./";
+import { notionClient, NotionTicket } from "./";
 import { getAllFromDB } from "./utils";
+import { databaseId } from "../../config";
 export * from "./createTicket";
 
 export const setTicketAsReOpen = async (notionId: string) => {
@@ -67,7 +68,7 @@ export const setTicketAsBacklog = async (notionId: string) => {
 export const getTicketByTopic = async (topic_id: number) => {
     try {
         const response = await notionClient.databases.query({
-            database_id: databaseId ?? "NO_DATABASE_ID",
+            database_id: databaseId,
             filter: {
                 "property": "topic_id",
                 number: {

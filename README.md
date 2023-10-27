@@ -65,6 +65,10 @@ vercel
 
 This command builds and deploys your project, and provides a live URL where you can access it.
 
+## Signature
+
+Set the `FORUM_SECRET` env var to be the same as the discourse webhook secret.
+
 ## Contributing
 
 If you wish to contribute to this project, please first create an issue to discuss the change you wish to make before making a change.

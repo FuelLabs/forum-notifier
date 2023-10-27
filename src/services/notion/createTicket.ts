@@ -1,5 +1,6 @@
-import { notionClient, databaseId, forumUrl } from "./";
+import { notionClient } from "./";
 import { Ticket } from "../../ticket";
+import { databaseId, forumUrl } from "../../config";
 
 export const createTicket = async (post: Ticket) => {
     let owner = "" // TODO add owner logic
