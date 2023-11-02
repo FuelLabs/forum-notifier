@@ -3,7 +3,6 @@ import { notionKey } from "../../config";
 
 export * from "./tickets";
 export * from "./events";
-export * from "./createDataSnapshot";
 export * from "./types"
 
 

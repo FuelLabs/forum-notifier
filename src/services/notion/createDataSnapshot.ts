@@ -1,7 +1,8 @@
 import { CreatePageParameters } from "@notionhq/client/build/src/api-endpoints";
 import { getCurrentUnixTimestamp, getIsoDate } from "./utils";
 import { notionClient } from "./";
-import { snapshotsDatabaseId } from "../../config";
+// import { snapshotsDatabaseId } from "../../config";
+const snapshotsDatabaseId = ''
 
 export const createDataSnapshot = async (
     closeTimeAvg: number, firstReplyAvg: number,
