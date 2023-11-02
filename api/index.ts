@@ -8,7 +8,7 @@ import { hasValidSignature } from '../src/helpers';
 export default async (req: VercelRequest, res: VercelResponse) => {
     if (!hasValidSignature(req) || req.headers['x-discourse-instance'] !== forumUrl) {
         console.log('Invalid request');
-        return res.status(401).send({ error: 'Invalid request' });
+        return res.status(401).send({ error: 'Invalid request signature' });
     }
 
     try {
